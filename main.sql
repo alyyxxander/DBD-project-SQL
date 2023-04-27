@@ -4,7 +4,6 @@ create or replace Table USER
 (
     USER_ID             SMALLINT(5),
     USER_GAMES_ID       SMALLINT(5),
-    FRIENDLIST_ID       SMALLINT,
     USER_FRIENDS_ID     SMALLINT,
     USER_BLOCKS_ID      SMALLINT,
     CHAT_ID             SMALLINT,
