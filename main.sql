@@ -2,16 +2,16 @@
 
 create or replace Table USER
 (
-    USER_ID             SMALLINT(5),
+    USER_ID             INTEGER(5),
     USER_LNAME          VARCHAR(15),
     USER_FNAME          VARCHAR(15),
     USER_PHONE          char(12),
     USER_EMAIL          char(25),
     USER_GAMERTAG       char(25),
-    USER_GAMES_ID       SMALLINT(5),
-    USER_FRIENDS_ID     SMALLINT,
-    USER_BLOCKS_ID      SMALLINT,
-    CHAT_ID             SMALLINT,
+    USER_GAMES_ID       INTEGER(5),
+    USER_FRIENDS_ID     INTEGER(5),
+    USER_BLOCKS_ID      INTEGER(5),
+    CHAT_ID             INTEGER(5),
 
 PRIMARY KEY (USER_ID),
 FOREIGN KEY (USER_GAMES_ID) 
@@ -28,8 +28,8 @@ INSERT
 
 CREATE OR REPLACE TABLE USER_FRIENDS
 (
-    USER_FRIENDS_ID     SMALLINT,
-    USER_ID             SMALLINT,
+    USER_FRIENDS_ID     INTEGER(5),
+    USER_ID             INTEGER(5),
 
     PRIMARY KEY(USER_FRIENDS_ID),
         FOREIGN KEY(USER_ID) REFERENCES USER (USER_ID)
@@ -38,8 +38,8 @@ CREATE OR REPLACE TABLE USER_FRIENDS
 /* TABLE FOR GAME */
 create or replace Table GAME
 (
-    GAME_ID         SMALLINT,
-    PLATFORM_ID     SMALLINT,
+    GAME_ID         INTEGER(5),
+    PLATFORM_ID     INTEGER(5),
     GAME_TITLE      char(25),
     GAME_GENRE      char(20),
     RELEASE_DATE    DATE,
@@ -53,9 +53,9 @@ create or replace Table GAME
 /* TABLE FOR PLATFORM */
 create or replace TABLE PLATFORM
 (
-    PLATFORM_ID             SMALLINT,
-    USER_ID                 SMALLINT,
-    PLATFORM_GAMELIST_ID    SMALLINT,
+    PLATFORM_ID             INTEGER(5),
+    USER_ID                 INTEGER(5),
+    PLATFORM_GAMELIST_ID    INTEGER(5),
 
     PRIMARY KEY (PLATFORM_ID),
     FOREIGN KEY (USER_ID) REFERENCES USER (USER_ID)
@@ -64,10 +64,10 @@ create or replace TABLE PLATFORM
 /* TABLE FOR FORUM */
 create or replace TABLE FORUM
 (
-    FORUM_ID        SMALLINT,
-    USER_ID         SMALLINT,
-    GAME_ID         SMALLINT,
-    PLATFORM_ID     SMALLINT,
+    FORUM_ID        INTEGER(5),
+    USER_ID         INTEGER(5),
+    GAME_ID         INTEGER(5),
+    PLATFORM_ID     INTEGER(5),
     DATE_POSTED     DATE,
 
     PRIMARY KEY (FORUM_ID),
@@ -85,8 +85,8 @@ create or replace TABLE FORUM
 /* TABLE FOR THE BLOCKED USERS */
 CREATE OR REPLACE TABLE USER_BLOCKS
 (
-    USER_BLOCKS_ID      SMALLINT,
-    USER_ID             SMALLINT,
+    USER_BLOCKS_ID      INTEGER(5),
+    USER_ID             INTEGER(5),
 
     PRIMARY KEY(USER_BLOCKS_ID),
     FOREIGN KEY(USER_ID) 
@@ -95,10 +95,10 @@ CREATE OR REPLACE TABLE USER_BLOCKS
 ;
 CREATE OR REPLACE TABLE CHAT
 (
-    CHAT_ID SMALLINT,
-    MESSAGE_ID SMALLINT,
-    USER_ID SMALLINT,
-    MESSAGE_CONTENT char(255),
+    CHAT_ID             INTEGER(5),
+    MESSAGE_ID          INTEGER(5),
+    USER_ID             INTEGER(5),
+    MESSAGE_CONTENT     char(255),
 
     PRIMARY KEY (CHAT_ID),
         FOREIGN KEY (USER_ID) REFERENCES USER (USER_ID)
@@ -107,9 +107,9 @@ CREATE OR REPLACE TABLE CHAT
 ;
 CREATE OR REPLACE TABLE REVIEW
 (
-    REVIEW_ID           SMALLINT,
-    USER_ID             SMALLINT,
-    GAME_ID             SMALLINT,
+    REVIEW_ID           INTEGER(5),
+    USER_ID             INTEGER(5),
+    GAME_ID             INTEGER(5),
     RATING              DECIMAL(2,1),
     REVIEW_CONTENT      char(255),
     DATE_POSTED         DATE,
@@ -121,8 +121,8 @@ CREATE OR REPLACE TABLE REVIEW
 ;
 CREATE OR REPLACE TABLE POST
 (
-    USER_POST_ID    SMALLINT,
-    USER_ID         SMALLINT,
+    USER_POST_ID    INTEGER(5),
+    USER_ID         INTEGER(5),
     POST_CONTENT    char(255),
 
     PRIMARY KEY(USER_POST_ID),
