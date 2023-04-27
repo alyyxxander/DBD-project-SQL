@@ -3,18 +3,18 @@
 create or replace Table USER
 (
     USER_ID             SMALLINT(5),
-    USER_GAMES_ID       SMALLINT(5),
-    USER_FRIENDS_ID     SMALLINT,
-    USER_BLOCKS_ID      SMALLINT,
-    CHAT_ID             SMALLINT,
     USER_LNAME          VARCHAR(15),
     USER_FNAME          VARCHAR(15),
     USER_PHONE          char(8),
     USER_EMAIL          char(25),
     USER_GAMERTAG       char(25),
+    USER_GAMES_ID       SMALLINT(5),
+    USER_FRIENDS_ID     SMALLINT,
+    USER_BLOCKS_ID      SMALLINT,
+    CHAT_ID             SMALLINT,
 
-PRIMARY KEY (USER_ID),
-FOREIGN KEY (USER_GAMES_ID) 
+    PRIMARY KEY (USER_ID),
+    FOREIGN KEY (USER_GAMES_ID) 
         REFERENCES USER (USER_ID)
     
 )
