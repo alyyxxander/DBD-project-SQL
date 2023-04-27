@@ -6,7 +6,6 @@ create or replace Table USER
     USER_GAMES_ID       SMALLINT(5),
     FRIENDLIST_ID       SMALLINT,
     USER_FRIENDS_ID     SMALLINT,
-    BLOCKLIST_ID        SMALLINT,
     USER_BLOCKS_ID      SMALLINT,
     CHAT_ID             SMALLINT,
     USER_LNAME          VARCHAR(15),
