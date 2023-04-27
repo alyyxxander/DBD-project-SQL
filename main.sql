@@ -15,7 +15,7 @@ create or replace Table USER
 
 PRIMARY KEY (USER_ID),
 FOREIGN KEY (USER_GAMES_ID) 
-        REFERENCES USER (USER_ID)
+        REFERENCES USER_GAMES(USER_GAMES_ID)
     
 )
 ;
