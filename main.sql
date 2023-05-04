@@ -5,7 +5,7 @@ CREATE OR REPLACE TABLE USER()
     USER_ID             SMALLINT(5),
     USER_LNAME          VARCHAR(15),
     USER_FNAME          VARCHAR(15),
-    USER_PHONE          char(12),
+    USER_PHONE          char(11),
     USER_EMAIL          varchar(30),
     USER_GAMERTAG       varchar(25),
     USER_FRIENDS_ID     SMALLINT,
