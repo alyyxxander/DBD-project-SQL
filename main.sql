@@ -1,32 +1,31 @@
 -- Active: 1679574137028@@151.161.91.21@3306@znb34_GamerDatabase
 
 /* TABLE FOR THE USERS */
-CREATE OR REPLACE TABLE USER()
-    USER_ID             SMALLINT(5),
+CREATE TABLE USERS(  
+    USER_ID             INT(5),
     USER_LNAME          VARCHAR(15),
     USER_FNAME          VARCHAR(15),
     USER_PHONE          char(11),
-    USER_EMAIL          varchar(30),
-    USER_GAMERTAG       varchar(25),
-    USER_FRIENDS_ID     SMALLINT,
-    USER_BLOCKS_ID      SMALLINT,
-    CHAT_ID             SMALLINT,
+    USER_EMAIL          char(30),
+    USER_GAMERTAG       char(25),
+    USER_FRIENDS_ID     INT(5),
+    USER_BLOCKS_ID      INT(5),
+    CHAT_ID             INT(5),
 
     PRIMARY KEY (USER_ID)
 );
 
-ALTER TABLE `USER`
-    MODIFY USER_PHONE char(12)
-;
-INSERT
-    INTO USER (`USER_ID`, `USER_LNAME`, `USER_FNAME`, `USER_PHONE`, `USER_EMAIL`,
-     `USER_GAMERTAG`, `USER_FRIENDS_ID`,`USER_BLOCKS_ID`, `CHAT_ID`)
-    VALUES(12545, "Smith", "John", "814-555-6969", "smithjohn23@gmail.com", "johnsmith69420",12346,12347,12348)
-    VALUES(23431, "Johnson", "James","570-555-4200","johnsonjames55@hotmail.com","jamesgames55",25362,76475,35251)
-    VALUES(97241, "Williams", "Robert","670-555-1234","williamsrobert99@gmail.com","realrobert500",63426,73748,25210)
-    VALUES(78414, "Brown", "David","717-555-0909","browndavid88@gmail.com","dbrown007",84268,90877,78213)
-    VALUES(98124, "Jones", "William","814,555-3030","joneswilliam77@hotmail.com","wetwilly11",64555,51515,81246)
-    ;
+ALTER TABLE `USERS`
+    MODIFY USER_PHONE char(12);
+
+INSERT INTO USERS
+    (`USER_ID`, `USER_LNAME`,`USER_FNAME`,`USER_PHONE`,`USER_EMAIL`,`USER_GAMERTAG`, `USER_FRIENDS_ID`,`USER_BLOCKS_ID`,`CHAT_ID`)
+VALUES
+    (12545, "Smith", "John", "814-555-6969", "smithjohn23@gmail.com", "johnsmith69420",12346,12347,12348),
+    (23431, "Johnson", "James","570-555-4200","johnsonjames55@hotmail.com","jamesgames55",25362,46475,35251),
+    (97241, "Williams", "Robert","670-555-1234","williamsrobert99@gmail.com","realrobert500",63426,13748,25210),
+    (78414, "Brown", "David","717-555-0909","browndavid88@gmail.com","dbrown007",84268,30877,78213),
+    (98124, "Jones", "William","814,555-3030","joneswilliam77@hotmail.com","wetwilly11",64555,21515,81246);
 
 /* TABLE FOR THE USERS FRIENDS */
 CREATE OR REPLACE TABLE USER_FRIENDS(
