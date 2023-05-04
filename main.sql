@@ -8,13 +8,11 @@ CREATE OR REPLACE TABLE USER()
     USER_PHONE          char(12),
     USER_EMAIL          char(25),
     USER_GAMERTAG       char(25),
-    USER_GAMES_ID       SMALLINT(5),
     USER_FRIENDS_ID     SMALLINT,
     USER_BLOCKS_ID      SMALLINT,
     CHAT_ID             SMALLINT,
 
-    PRIMARY KEY (USER_ID),
-    FOREIGN KEY (USER_GAMES_ID) REFERENCES USER_GAMES(USER_GAMES_ID)
+    PRIMARY KEY (USER_ID)
 );
 
 ALTER TABLE `USER`
@@ -22,12 +20,12 @@ ALTER TABLE `USER`
 ;
 INSERT
     INTO USER (`USER_ID`, `USER_LNAME`, `USER_FNAME`, `USER_PHONE`, `USER_EMAIL`,
-     `USER_GAMERTAG`, `USER_GAMES_ID`, `USER_FRIENDS_ID`,`USER_BLOCKS_ID`, `CHAT_ID`)
-    VALUES(12545, "Smith", "John", "814-555-6969", "smithjohn23@gmail.com", "johnsmith69420",85854,12346,12347,12348)
-    VALUES(23431, "Johnson", "James","570-555-4200","johnsonjames55@hotmail.com","jamesgames55",90872,25362,76475,35251)
-    VALUES(97241, "Williams", "Robert","670-555-1234","williamsrobert99@gmail.com","realrobert500",52356,63426,73748,25210)
-    VALUES(78414, "Brown", "David","717-555-0909","browndavid88@gmail.com","dbrown007",62362,84268,90877,78213)
-    VALUES(98124, "Jones", "William","814,555-3030","joneswilliam77@hotmail.com","wetwilly11",87712,64555,51515,81246)
+     `USER_GAMERTAG`, `USER_FRIENDS_ID`,`USER_BLOCKS_ID`, `CHAT_ID`)
+    VALUES(12545, "Smith", "John", "814-555-6969", "smithjohn23@gmail.com", "johnsmith69420",12346,12347,12348)
+    VALUES(23431, "Johnson", "James","570-555-4200","johnsonjames55@hotmail.com","jamesgames55",25362,76475,35251)
+    VALUES(97241, "Williams", "Robert","670-555-1234","williamsrobert99@gmail.com","realrobert500",63426,73748,25210)
+    VALUES(78414, "Brown", "David","717-555-0909","browndavid88@gmail.com","dbrown007",84268,90877,78213)
+    VALUES(98124, "Jones", "William","814,555-3030","joneswilliam77@hotmail.com","wetwilly11",64555,51515,81246)
     ;
 
 /* TABLE FOR THE USERS FRIENDS */
@@ -71,6 +69,9 @@ CREATE OR REPLACE TABLE GAME(
 
     PRIMARY KEY (GAME_ID),
     FOREIGN KEY (PLATFORM_ID) REFERENCES PLATFORM (PLATFORM_ID)
+
+    INSERT
+        INTO `GAME`
 );
 
 /* TABLE FOR PLATFORM */
