@@ -115,7 +115,11 @@ CREATE OR REPLACE TABLE FORUM(
     INSERT
         INTO `FORUM` (`FORUM_ID`,`FORUM_NAME`,`USER_ID`,`GAME_ID`,`PLATFORM_ID`,`DATE_POSTED`)
     VALUES
-        (34,"I AM STUCK, HELP ME",12346,4646,1,"04052023")
+        (34,"I AM STUCK, HELP ME",12346,4646,1,"2023-04-05"),
+        (69,"The cake is a lie.",12422,2311,2,"2023-05-12"),
+        (420,"I am the best at this Minecraft.",12346,4646,1,"1932-12-08"),
+        (102,"I am illiterate.",52212,2290,3,"2022-11-01"),
+        (532,"New Elder Scrolls Game!!!",32123,3876,1,"2011-11-11")
 );
 
 /* TABLE FOR THE BLOCKED USERS */
@@ -129,7 +133,11 @@ CREATE OR REPLACE TABLE USER_BLOCKS(
     INSERT
         INTO USER_BLOCKS (USER_BLOCKS_ID, USER_ID)
         VALUES
-            (21312, 12545)
+            (21312, 12545),
+            (66785, 09285),
+            (79259, 91920),
+            (28275, 18485),
+            (17859, 59995)
 );
 
 /* TABLE FOR THE USER'S CHAT */
@@ -145,7 +153,11 @@ CREATE OR REPLACE TABLE CHAT(
     INSERT
         INTO CHAT (CHAT_ID, MESSAGE_ID, USER_ID, MESSAGE_CONTENT)
         VALUES
-            (69691, 90009, 12346, "you da goat frfr")
+            (69691, 90009, 12346, "you da goat frfr"),
+            (00001, 00001, 01011, "this is the first message ever"),
+            (42859, 19042, 27895, "how to i learn to read"),
+            (74822, 19984, 92853, "when's dad coming back"),
+            (86672, 32819, 83834, "when you get a victory in fortnite")
 );
 
 /* TABLE FOR USER CREATED REVIEWS */
@@ -163,7 +175,11 @@ CREATE OR REPLACE TABLE REVIEW(
     INSERT
         INTO REVIEW(REVIEW_ID, USER_ID, GAME_ID, RATING, REVIEW_CONTENT, DATE_POSTED)
         VALUES
-            (1,12346,1,99,"SUPER MARIO ODYSSEY IS A VERY FUN GAME.","2020-06-07")
+            (1, 12346, 1, 99, "SUPER MARIO ODYSSEY IS A VERY FUN GAME.","2020-06-07"),
+            (21, 24882, 53, 85, "This game is fun, but very difficult", "2021-04-04"), 
+            (52, 85819, 291, 35, "How do I get my money back for this garbage??", "2015-05-27"),
+            (12, 84759, 118, 100, "Most funnest game ever!!!!!", "2010-02-17"),
+            (44, 18892, 920, 87, "I love this game, but it's too short", "2019-12-12")
 );
 
 /* TABLE FOR USER CREATED POSTS */
@@ -178,5 +194,9 @@ CREATE OR REPLACE TABLE POST(
     INSERT
         INTO POST(USER_POST_ID, USER_ID, POST_CONTENT)
         VALUES
-            (1, 12346, "I CAN'T BELIEVE THAT A CREEPER BLEW UP MY HOUSE!")
+            (1, 12346, "I CAN'T BELIEVE THAT A CREEPER BLEW UP MY HOUSE!"),
+            (34, 78297, "How do I catch fish in this game?"),
+            (13, 18449, "THIS IS A POST THIS IS A POST THIS IS A POST"),
+            (15, 49285, "Why do monsters keep breaking into my base?"),
+            (56, 19844, "I can't find any diamonds, can someone help me?")
 );
